@@ -173,8 +173,11 @@ server.port=8080
 ---
 
 ## 📸 Screenshots
+<img width="1920" height="1080" alt="Screenshot (337)" src="https://github.com/user-attachments/assets/d9095190-548e-4445-b1f0-fc03274cd7bc" />
 
-> *(Add screenshots of your extension in action here)*
+<img width="1920" height="1080" alt="Screenshot (338)" src="https://github.com/user-attachments/assets/e3025705-cab0-4d1a-be4c-afd9ca90bfaf" />
+
+<img width="1920" height="1080" alt="Screenshot (339)" src="https://github.com/user-attachments/assets/e609e972-7d8e-4e36-abb0-402cf3858e80" />
 
 ---
 
