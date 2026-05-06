@@ -21,54 +21,6 @@
 
 ---
 
-## 🏗️ Architecture
-
-```
-┌──────────────────────────────────────────────────────────┐
-│                    CHROME BROWSER                        │
-│                                                          │
-│   ┌─────────────────┐      ┌────────────────────────┐   │
-│   │  Webpage Text   │─────▶│   Chrome Extension     │   │
-│   │ (User selects)  │      │  sidepanel.html/js/css  │   │
-│   └─────────────────┘      └───────────┬────────────┘   │
-└───────────────────────────────────────-┼────────────────┘
-                                         │ HTTP POST (text)
-                                         ▼
-                             ┌────────────────────────┐
-                             │   Spring Boot Backend  │
-                             │   ResearchController   │
-                             │   ResearchService      │
-                             └───────────┬────────────┘
-                                         │ Gemini API Call
-                                         ▼
-                             ┌────────────────────────┐
-                             │   Google Gemini AI     │
-                             │   → Short Summary      │
-                             └────────────────────────┘
-```
-
----
-
-## 🗂️ Project Structure
-
-```
-Research-Assistant/
-│
-├── research-assistant-ext/              ← 🌐 Chrome Extension (Frontend)
-│   ├── manifest.json                    ← Extension config & permissions
-│   ├── background.js                    ← Service worker (background tasks)
-│   ├── sidepanel.html                   ← Side panel UI layout
-│   ├── sidepanel.js                     ← Logic & API calls to backend
-│   └── sidepanel.css                    ← Styling
-│
-└── research-assistant/                  ← ☕ Spring Boot Backend
-    └── src/main/java/com/research/assistant/
-        ├── ResearchAssistantApplication.java   ← Main entry point
-        ├── ResearchController.java             ← REST API endpoints
-        ├── ResearchService.java                ← Gemini API logic
-        ├── ResearchRequest.java                ← Request model (text input)
-        └── GeminiResponse.java                 ← Response model (summary)
-```
 
 ---
 
@@ -84,23 +36,6 @@ Research-Assistant/
 
 ---
 
-## ⚙️ How It Works
-
-```
-1. User highlights/selects text directly on any webpage
-           ↓
-2. sidepanel.js automatically captures selected text & sends via HTTP POST to Spring Boot
-           ↓
-3. ResearchController receives the ResearchRequest
-           ↓
-4. ResearchService calls Google Gemini API with the text
-           ↓
-5. Gemini returns a short summary → mapped to GeminiResponse
-           ↓
-6. Summary is returned as JSON to the Chrome Extension
-           ↓
-7. sidepanel.js displays the summary in the side panel ✅
-```
 
 ---
 
