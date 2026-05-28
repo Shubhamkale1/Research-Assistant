@@ -22,8 +22,6 @@
 ---
 
 
----
-
 ## 🛠️ Tech Stack
 
 | Layer | Technology |
